@@ -1,6 +1,4 @@
-%w{version utilities named_reader named_writer named_accessor}.each do |filename|
-  require "named_accessors/#{filename}"
-end
+Dir[File.dirname(__FILE__) + '/named_accessors/*.rb'].each {|file| require file }
 
 module NamedAccessors
   include Utilities
