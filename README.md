@@ -5,6 +5,12 @@ You ever wanted to create attr_accessor with specified name? Now You can!
 ## Installation
 
 ```ruby
+gem 'named_accessors'
+```
+
+or 
+
+```ruby
 gem 'named_accessors', git: 'git@github.com:zlw/named_accessors.git'
 ```
 
