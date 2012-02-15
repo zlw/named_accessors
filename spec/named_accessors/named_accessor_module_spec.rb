@@ -1,11 +1,7 @@
 require 'spec_helper'
 
-class DummyObject
-end
-
-
-describe DummyObject do
-  let(:klass) { DummyObject }
+describe Object do
+  let(:klass) { Object }
 
   context '#extract_as_option' do
     it 'should return as option' do
@@ -27,6 +23,12 @@ describe DummyObject do
   context '#setter_name' do
     it 'should return setter name' do
       klass.send(:setter_name, {as: :dummy_setter}).should == :dummy_setter=
+    end
+  end
+
+  context '#instance_variable_name' do
+    it 'should return proper instance variable name' do
+      klass.send(:instance_variable_name, :foobar).should == :'@foobar'
     end
   end
 end

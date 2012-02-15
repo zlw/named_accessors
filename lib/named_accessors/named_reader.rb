@@ -1,10 +1,10 @@
 module NamedAccessors
   module NamedReader
     def named_reader(name, options={})
-      method_name, variable_name = getter_name(options), name
+      variable = instance_variable_name(name)
 
-      define_method method_name do
-        instance_variable_get :"@#{variable_name}"
+      define_method getter_name(options) do
+        instance_variable_get variable
       end
     end
   end

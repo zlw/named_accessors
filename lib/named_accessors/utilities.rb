@@ -12,5 +12,9 @@ module NamedAccessors
     def extract_as_option(options)
       options.fetch(:as) rescue raise "You must specify `as` option"
     end
+
+    def instance_variable_name(name)
+      :"@#{name}"
+    end
   end
 end
