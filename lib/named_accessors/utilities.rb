@@ -16,5 +16,15 @@ module NamedAccessors
     def instance_variable_name(name)
       :"@#{name}"
     end
+
+    def extract_accessor_options(options)
+      [extract_option(options, :reader), extract_option(options, :writer)]
+    end
+
+    def extract_option(options, type)
+      option = options.fetch(type, nil)
+
+      option ? options.merge(as: option) : options
+    end
   end
 end
