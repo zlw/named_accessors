@@ -29,6 +29,10 @@ class Post
   named_accessor :title, as: :fancy_title
   named_writer :content, as: :post_content
   named_reader :created_at, as: :when_was_it_created?
+
+  named_accessor :foo, reader: :foobar, writer: :foobaz
+  named_accessor :foo, as: :bar, reader: :foobar
+  named_accessor :foo, as: :bar, writer: :foobar
 end
 
 post = Post.new('Lorem ispum')
