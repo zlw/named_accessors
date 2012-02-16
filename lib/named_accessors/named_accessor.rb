@@ -1,8 +1,10 @@
 module NamedAccessors
   module NamedAccessor
     def named_accessor(name, options={})
-      named_writer(name, options)
-      named_reader(name, options)
+      reader, writer = extract_accessor_options(options)
+
+      named_reader(name, reader)
+      named_writer(name, writer)
     end
   end
 end
